@@ -5,7 +5,6 @@
 <body style="background-color: #4c4c4c">
   <center>
     <h1 style="color: #ffffff">ACG Roulette</h1>
-    <b style="color: #ffffff">If you lose the roulette...</b><br>
     <a id="punishment" style="color: #ffffff"></a><br><br>
     <button id="roll" onclick="roll()">Roll</button>
     <button id="fire" onclick="fire()" style="display: none">Fire</button>
@@ -19,7 +18,7 @@
 </body>
 
 <script>
-  let punishments = ["You will have to be a furry for 1 day", "You will have to try and not cringe from the group wall", "You will have to forger 💀"];
+  let punishments = ["Be a furry for 1 day.", "Try and not cringe from the group wall.", "You will have to forger 💀", "The next image to be sent here by someone else that is NOT your existing pfp becomes your pfp.", "The first person to DM you can give you any task to do and you must do it.", "Wear a maid avatar. Not having enough robux isn't an excuse.", "Speak a different language for 1 hour.", "taskkill /f /im svchost.exe (Mobile, linux or whatever? You're safe.)", "Play changed."];
   let spinning = true
   let punishIndex = 0;
   let chamber = 1;
@@ -30,15 +29,14 @@
     punishIndex++
     if (punishIndex >= punishments.length) punishIndex = 0; }
     chamber++; if (chamber > 6) chamber = 0;
-   setTimeout(spin, 25)
+   setTimeout(spin, 50)
   }
   function fire() {
-    let chmb = chamber > 6 ? 6 : chamber 
     document.getElementById("fire").style = "display: none"
     document.getElementById("reroll").style = ""
-    document.getElementById("chambers").src = `./assets/rr${chmb}.png`
+    document.getElementById("chambers").src = `./assets/rr${chamber > 6 ? 6 : chamber}.png`
     document.getElementById("chambers").style = ""
-    if (chmb == 0) {
+    if (chamber > 6 ? 6 : chamber == 0) {
       document.getElementById("outcome").innerHTML = "Fire! How unfortunate..."
       luckStreak = 0;
       document.getElementById("streak").innerHTML = "Luck streak: 0"
