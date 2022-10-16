@@ -6,7 +6,7 @@
   <center>
     <h1 style="color: #ffffff">ACG Roulette</h1>
     <b style="color: #ffffff">If you lose the roulette...</b><br>
-    <a id="punishment" style="color: #ffffff">I forgor</a><br><br>
+    <a id="punishment" style="color: #ffffff"></a><br><br>
     <button id="roll" onclick="roll()">Roll</button>
     <button id="fire" onclick="fire()" style="display: none">Fire</button>
     <button id="reroll" onclick="reroll()" style="display: none">Reroll</button>
@@ -20,17 +20,17 @@
 
 <script>
   let punishments = ["You will have to be a furry for 1 day", "You will have to try and not cringe from the group wall", "You will have to forger 💀"];
-  let spinning = true
+  //let spinning = true
   let punishIndex = 0;
   let chamber = 0;
   let luckStreak = 0;
-  function spin() {
-    document.getElementById("punishment").innerHTML = punishments[punishIndex];
-    punishIndex++
-    if (punishIndex > punishments.length) punishIndex = 0;
-    if (!spinning) {break}
-    setTimeout(25, spin)
-  }
+  //THIS THING DOES NOT WORK AND I HATE IT
+  //function spin() {
+    //document.getElementById("punishment").innerHTML = punishments[punishIndex];
+    //punishIndex++
+    //if (punishIndex > punishments.length) punishIndex = 0;
+   // setTimeout(25, spin)
+  //}
   function fire() {
     document.getElementById("fire").style = "display: none"
     document.getElementById("reroll").style = ""
@@ -48,17 +48,19 @@
     } }
     
    function reroll() {
+     document.getElementById("punishment").innerHTML = ''
       document.getElementById("fire").style = "display: none"
       document.getElementById("reroll").style = "display: none"
       document.getElementById("roll").style = ""
       document.getElementById("chambers").style = "display: none"
       document.getElementById("outcome").innerHTML = "You haven't fired yet"
-      spinning = true;
-     spin();
+      //spinning = true;
+    // spin();
    }
     
     function roll() {
-      spinning = false;
+      //spinning = false;
+      document.getElementById("punishment").innerHTML = punishments[Math.floor(Math.random() * punishments.length)]
       document.getElementById("fire").style = ""
       document.getElementById("reroll").style = "display: none"
       document.getElementById("roll").style = "display: none"
