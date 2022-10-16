@@ -25,10 +25,9 @@
   let chamber = 0;
   let luckStreak = 0;
   function spin() {
-    if (spinning) {
     document.getElementById("punishment").innerHTML = punishments[punishIndex];
     punishIndex++
-    if (punishIndex > punishments.length) punishIndex = 0; }
+    
   }
   setInterval(25, spin)
   function fire() {
