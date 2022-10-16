@@ -20,24 +20,25 @@
 
 <script>
   let punishments = ["You will have to be a furry for 1 day", "You will have to try and not cringe from the group wall", "You will have to forger 💀"];
-  //let spinning = true
+  let spinning = true
   let punishIndex = 0;
-  let chamber = 0;
+  let chamber = 1;
   let luckStreak = 0;
-  //THIS THING DOES NOT WORK AND I HATE IT
-  //function spin() {
-    //document.getElementById("punishment").innerHTML = punishments[punishIndex];
-    //punishIndex++
-    //if (punishIndex > punishments.length) punishIndex = 0;
-   // setTimeout(25, spin)
-  //}
+  function spin() {
+    if (spinning) {
+    document.getElementById("punishment").innerHTML = punishments[punishIndex];
+    punishIndex++
+    if (punishIndex >= punishments.length) punishIndex = 0; }
+    chamber++; if (chamber > 6) chamber = 0;
+   setTimeout(spin, 25)
+  }
   function fire() {
+    let chmb = chamber > 6 ? 6 : chamber 
     document.getElementById("fire").style = "display: none"
     document.getElementById("reroll").style = ""
-    chamber = Math.floor(Math.random() * 6)
-    document.getElementById("chambers").src = `./assets/rr${chamber+1}.png`
+    document.getElementById("chambers").src = `./assets/rr${chmb}.png`
     document.getElementById("chambers").style = ""
-    if (chamber == 0) {
+    if (chmb == 0) {
       document.getElementById("outcome").innerHTML = "Fire! How unfortunate..."
       luckStreak = 0;
       document.getElementById("streak").innerHTML = "Luck streak: 0"
@@ -54,26 +55,18 @@
       document.getElementById("roll").style = ""
       document.getElementById("chambers").style = "display: none"
       document.getElementById("outcome").innerHTML = "You haven't fired yet"
-      //spinning = true;
-    // spin();
+      spinning = true;
+  
    }
     
     function roll() {
-      //spinning = false;
-      
+      spinning = false;
       document.getElementById("fire").style = ""
       document.getElementById("reroll").style = "display: none"
       document.getElementById("roll").style = "display: none"
       document.getElementById("outcome").innerHTML = "The bullet is loaded, the punishment is decided. Will you be lucky?"
     }
   
-  window.addEventListener('load', event => {
-    if (spinning) {
-      punishIndex++;
-      if (punishIndex >= punishments.length) punishIndex = 0;
-      document.getElementById("punishment").innerHTML = punishments[punishIndex];
-      
-    }
-  })
+  
                         
 </script>  
