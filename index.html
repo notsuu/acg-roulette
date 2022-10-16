@@ -7,11 +7,11 @@
     <h1 style="color: #ffffff">ACG Roulette</h1>
     <b style="color: #ffffff">If you lose the roulette...</b><br>
     <a id="punhisment" style="color: #ffffff">I forgor</a><br><br>
-    <button id="roll" onclick="roll()" style="visibility: visible">Roll</button>
-    <button id="fire" onclick="fire()" style="visibility: hidden">Fire</button>
-    <button id="reroll" onclick="reroll()" style="visibility: hidden">Reroll</button>
+    <button id="roll" onclick="roll()">Roll</button>
+    <button id="fire" onclick="fire()" style="display: none">Fire</button>
+    <button id="reroll" onclick="reroll()" style="display: none">Reroll</button>
     <br><br>
-    <img id="chambers" src="/assets/rr1.png" style="visibility: hidden"></img><br>
+    <img id="chambers" src="./assets/rr1.png" style="display: none"></img><br>
     <b id="outcome" style="color: #ffffff">You haven't fired yet</b> 
   </center>
 <footer id="streak" style="color:#ffffff"><center>Luck streak: 0</center></footer>
@@ -33,11 +33,11 @@
   }
   
   function fire() {
-    document.getElementById("fire").style = "visibility: hidden"
-    document.getElementById("reroll").style = "visibility: visible"
+    document.getElementById("fire").style = "display: none"
+    document.getElementById("reroll").style = ""
     chamber = Math.floor(Math.random() * 6)
     document.getElementById("chambers").src = `/assets/rr${chamber+1}.png`
-    document.getElementById("chambers").style = "visibility: visible"
+    document.getElementById("chambers").style = ""
     if (chamber == 1) {
       document.getElementById("outcome").innerHTML = "Fire! How unfortunate..."
       luckStreak = 0;
@@ -49,19 +49,19 @@
     } }
     
    function reroll() {
-      document.getElementById("fire").style = "visibility: hidden"
-      document.getElementById("reroll").style = "visibility: hidden"
-      document.getElementById("roll").style = "visibility: visible"
-      document.getElementById("chambers").style = "visibility: hidden"
+      document.getElementById("fire").style = "display: none"
+      document.getElementById("reroll").style = "display: none"
+      document.getElementById("roll").style = ""
+      document.getElementById("chambers").style = "display: none"
       document.getElementById("outcome").innerHTML = "You haven't fired yet"
       spinning = true;
    }
     
     function roll() {
       spinning = false;
-      document.getElementById("fire").style = "visibility: visible"
-      document.getElementById("reroll").style = "visibility: hidden"
-      document.getElementById("roll").style = "visibility: hidden"
-      ocument.getElementById("outcome").innerHTML = "The bullet is loaded, the punishment is decided. Will you be lucky?"
+      document.getElementById("fire").style = ""
+      document.getElementById("reroll").style = "display: none"
+      document.getElementById("roll").style = "display: none"
+      document.getElementById("outcome").innerHTML = "The bullet is loaded, the punishment is decided. Will you be lucky?"
     }
 </script>  
