@@ -5,9 +5,9 @@ let punishments = ["Be a furry for 1 day.", "Try and not cringe from the group w
   let luckStreak = 0;
   function spin() {
     if (spinning) {
-    document.getElementById("punishment").innerHTML = punishments[punishIndex];
+    document.getElementById("punishment").innerHTML = punishments[punishIndex]; }
     punishIndex++
-    if (punishIndex >= punishments.length) punishIndex = 0; }
+    if (punishIndex >= punishments.length) punishIndex = 0;
     chamber++; if (chamber > 6) chamber = 1;
    setTimeout(spin, 50)
   }
@@ -27,7 +27,7 @@ let punishments = ["Be a furry for 1 day.", "Try and not cringe from the group w
     } }
     
    function reroll() {
-     document.getElementById("punishment").innerHTML = ''
+     document.getElementById("punishment").innerHTML = punishments[punishIndex]
       document.getElementById("fire").style = "display: none"
       document.getElementById("reroll").style = "display: none"
       document.getElementById("roll").style = ""
