@@ -60,10 +60,20 @@
     
     function roll() {
       //spinning = false;
-      document.getElementById("punishment").innerHTML = punishments[Math.floor(Math.random() * punishments.length)]
+      
       document.getElementById("fire").style = ""
       document.getElementById("reroll").style = "display: none"
       document.getElementById("roll").style = "display: none"
       document.getElementById("outcome").innerHTML = "The bullet is loaded, the punishment is decided. Will you be lucky?"
     }
+  
+  window.addEventListener('load', event => {
+    if (spinning) {
+      punishIndex++;
+      if (punishIndex >= punishments.length) punishIndex = 0;
+      document.getElementById("punishment").innerHTML = punishments[punishIndex];
+      
+    }
+  })
+                        
 </script>  
