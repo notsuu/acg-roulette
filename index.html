@@ -28,16 +28,14 @@
     if (spinning) {
     document.getElementById("punishment").innerHTML = punishments[punishIndex];
     punishIndex++
-    if (punishIndex > punishments.length) punishIndex = 0;
+    if (punishIndex > punishments.length) punishIndex = 0; }
   }
-    setTimeout(25, spin)
-  }
-  
+  setInterval(25, spin)
   function fire() {
     document.getElementById("fire").style = "display: none"
     document.getElementById("reroll").style = ""
     chamber = Math.floor(Math.random() * 6)
-    document.getElementById("chambers").src = `./assets/rr${chamber+1}.png`
+    document.getElementById("chambers").src = `./assets/rr${chamber}.png`
     document.getElementById("chambers").style = ""
     if (chamber == 1) {
       document.getElementById("outcome").innerHTML = "Fire! How unfortunate..."
@@ -65,6 +63,4 @@
       document.getElementById("roll").style = "display: none"
       document.getElementById("outcome").innerHTML = "The bullet is loaded, the punishment is decided. Will you be lucky?"
     }
-  
-  spin()
 </script>  
