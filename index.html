@@ -28,7 +28,7 @@
     document.getElementById("punishment").innerHTML = punishments[punishIndex];
     punishIndex++
     if (punishIndex > punishments.length) punishIndex = 0;
-    if (!spinning) break;
+    if (!spinning) {break}
     setTimeout(25, spin)
   }
   function fire() {
