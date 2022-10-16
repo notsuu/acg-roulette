@@ -27,9 +27,10 @@
   function spin() {
     document.getElementById("punishment").innerHTML = punishments[punishIndex];
     punishIndex++
-    
+    if (punishIndex > punishments.length) punishIndex = 0;
+    if (!spinning) break;
+    setTimeout(25, spin)
   }
-  setInterval(25, spin)
   function fire() {
     document.getElementById("fire").style = "display: none"
     document.getElementById("reroll").style = ""
@@ -53,6 +54,7 @@
       document.getElementById("chambers").style = "display: none"
       document.getElementById("outcome").innerHTML = "You haven't fired yet"
       spinning = true;
+     spin();
    }
     
     function roll() {
