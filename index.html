@@ -35,9 +35,9 @@
     document.getElementById("fire").style = "display: none"
     document.getElementById("reroll").style = ""
     chamber = Math.floor(Math.random() * 6)
-    document.getElementById("chambers").src = `./assets/rr${chamber}.png`
+    document.getElementById("chambers").src = `./assets/rr${chamber+1}.png`
     document.getElementById("chambers").style = ""
-    if (chamber == 1) {
+    if (chamber == 0) {
       document.getElementById("outcome").innerHTML = "Fire! How unfortunate..."
       luckStreak = 0;
       document.getElementById("streak").innerHTML = "Luck streak: 0"
