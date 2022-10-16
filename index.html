@@ -28,7 +28,7 @@
     document.getElementById("punishment").innerHTML = punishments[punishIndex];
     punishIndex++
     if (punishIndex >= punishments.length) punishIndex = 0; }
-    chamber++; if (chamber > 6) chamber = 0;
+    chamber++; if (chamber > 6) chamber = 1;
    setTimeout(spin, 50)
   }
   function fire() {
@@ -36,7 +36,7 @@
     document.getElementById("reroll").style = ""
     document.getElementById("chambers").src = `./assets/rr${chamber > 6 ? 6 : chamber}.png`
     document.getElementById("chambers").style = ""
-    if (chamber > 6 ? 6 : chamber == 0) {
+    if (chamber > 6 ? 6 : chamber == 1) {
       document.getElementById("outcome").innerHTML = "Fire! How unfortunate..."
       luckStreak = 0;
       document.getElementById("streak").innerHTML = "Luck streak: 0"
