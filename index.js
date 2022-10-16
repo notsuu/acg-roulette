@@ -1,4 +1,4 @@
-let punishments = ["Be a furry for 1 day.", "Try and not cringe from the group wall.", "You will have to forger 💀", "The next image to be sent here by someone else that is NOT your existing pfp becomes your pfp.", "The first person to DM you can give you any task to do and you must do it.", "Wear a maid avatar. Not having enough robux isn't an excuse.", "Speak a different language for 1 hour.", "taskkill /f /im svchost.exe (Mobile, linux or whatever? You're safe.)", "Play changed."];
+let punishments = ["Be a furry for 1 day.", "Try and not cringe from the group wall.", "You will have to forger 💀", "The next image to be sent here by someone else that is NOT your existing pfp becomes your pfp. And yes, you have to keep it.", "The first person to DM you can give you any task to do and you must do it.", "Wear a maid avatar. Not having enough robux isn't an excuse.", "Speak a different language for 1 hour.", "taskkill /f /im svchost.exe (Mobile, linux or whatever? You're safe.)", "Play changed."];
   let spinning = true
   let punishIndex = 0;
   let chamber = 1;
