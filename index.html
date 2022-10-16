@@ -11,10 +11,11 @@
     <button id="fire" onclick="fire()" style="display: none">Fire</button>
     <button id="reroll" onclick="reroll()" style="display: none">Reroll</button>
     <br><br>
-    <img id="chambers" src="./assets/rr1.png" style="display: none"></img><br>
-    <b id="outcome" style="color: #ffffff">You haven't fired yet</b> 
+    <img id="chambers" src="" style="display: none"></img><br>
+    <b id="outcome" style="color: #ffffff">You haven't fired yet</b>
+  <footer id="streak" style="color:#ffffff">Luck streak: 0</footer>
   </center>
-<footer id="streak" style="color:#ffffff"><center>Luck streak: 0</center></footer>
+
 </body>
 
 <script>
@@ -36,7 +37,7 @@
     document.getElementById("fire").style = "display: none"
     document.getElementById("reroll").style = ""
     chamber = Math.floor(Math.random() * 6)
-    document.getElementById("chambers").src = `/assets/rr${chamber+1}.png`
+    document.getElementById("chambers").src = `./assets/rr${chamber+1}.png`
     document.getElementById("chambers").style = ""
     if (chamber == 1) {
       document.getElementById("outcome").innerHTML = "Fire! How unfortunate..."
